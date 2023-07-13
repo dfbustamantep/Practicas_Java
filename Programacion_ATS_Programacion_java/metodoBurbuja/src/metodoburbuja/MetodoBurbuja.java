@@ -8,7 +8,6 @@ import java.util.Scanner;
 import javax.swing.JOptionPane;
 
 /**
- *
  * @author Daniel Bustamante P
  */
 public class MetodoBurbuja {
@@ -17,10 +16,13 @@ public class MetodoBurbuja {
 
         //creacion scanner para entrada de datos por consola
         Scanner entrada = new Scanner(System.in);
+        
         //variables locales
         int arreglo[], nElementos, aux;
+        
         //pedimos el tamaño del arreglo con el JOptionPane
         nElementos = Integer.parseInt(JOptionPane.showInputDialog("Digite la cantidad de elementos del arreglo"));
+        
         //le asiganmos al arreglo el numero de elementos que va a tener
         arreglo = new int[nElementos];
 
@@ -36,7 +38,7 @@ public class MetodoBurbuja {
             //para ordenar el arreglo
             for (int j = 0; j < (nElementos - 1); j++) {
                 //si numeroActual>numeroSiguiente 
-                //relaizamos cambio
+                //realizamos cambio
                 if (arreglo[j] > arreglo[j + 1]) {
                     //con ayuda de la variable auxiliar intercambiamos los valores
                     aux = arreglo[j];
@@ -49,7 +51,7 @@ public class MetodoBurbuja {
         //imprimimos el arreglo ordenado de manera creciente
         System.out.println("\nArreglo ordenado de forma creciente\n");
         for(int i:arreglo){
-            System.out.println(i);
+            System.out.print(i+"");
         }
         
         /*for(int i=0;i<nElementos;i++){
@@ -58,7 +60,7 @@ public class MetodoBurbuja {
         
         System.out.println("\nArreglo ordanado de forma decreciente\n");
         for(int i=(nElementos-1);i>=0;i--){
-            System.out.println(arreglo[i]);
+            System.out.print(arreglo[i]+" ");
         }
         
     }
