@@ -85,7 +85,16 @@ public class Ventana extends JFrame{
         boton1.setBounds(100, 100, 100, 40);//x y ancho alto
         boton1.setEnabled(true);//activar o descativar las funciones del boton 
         boton1.setMnemonic('a');//estabelecemos alt +letra que pongamos para poder usar el boton
+        boton1.setForeground(Color.blue);//establecemos el color de la lewtra del boton
+        boton1.setFont(new Font("Comic Sans MS",3,20));//establecemos la fuente del texto primer parametro nombre de la fente,segundo el estilo de la fuente el cual se puede poner numerico o con el metodo Font.tipoTexto y el ultimo parametro tamaño
+        /*
+        0 normal
+        1 negrita
+        2 cursiva
+        3 negrita y cursiva
+        */
         panel.add(boton1);//añadimos el boton al panel
+        
         
     }
 }
