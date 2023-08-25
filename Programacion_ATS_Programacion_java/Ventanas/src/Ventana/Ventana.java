@@ -4,6 +4,7 @@ package Ventana;
 import java.awt.Color;
 import java.awt.Dimension;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class Ventana extends JFrame{
@@ -26,8 +27,14 @@ public class Ventana extends JFrame{
     
     private void iniciarComponentes(){
         JPanel panel = new JPanel();//Creacion del panel
-        panel.setBackground(Color.green);//establecemos el color del panel
+        //panel.setBackground(Color.green);//establecemos el color del panel
+        panel.setLayout(null);//estamos desactivando el diseño para qusar el metodo setBounds en etiqueta
         this.getContentPane().add(panel);//agregamosd el panel a la ventana
         
+        //JLabel etiqueta = new JLabel("Hola");//creamos una etiqueta
+        JLabel etiqueta = new JLabel();
+        etiqueta.setText("Hola");//establecemos el texto en la etiqueta
+        etiqueta.setBounds(10,10 ,50 ,50 );//posicionamos la etiqueta
+        panel.add(etiqueta);//agregamos la etiqueta sobre el panel
     }
 }
