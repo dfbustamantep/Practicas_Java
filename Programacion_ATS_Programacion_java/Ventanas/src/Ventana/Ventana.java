@@ -4,6 +4,8 @@ package Ventana;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.Image;
+import java.awt.MediaTracker;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -54,9 +56,13 @@ public class Ventana extends JFrame{
         
         //Etiqueta 2 - etiqueta tipo imagen
        
-        JLabel etiqueta2 = new JLabel(new ImageIcon("balonmundial.jpg"));
+        JLabel etiqueta2 = new JLabel();//creamos la etiqueta
+        ImageIcon imagen = new ImageIcon("balonMundial.jpg");//creamos la imagen
+               
         //etiqueta2.setIcon(new ImageIcon("balonmundial.jpg"));
-        etiqueta.setBounds(10, 80, 238, 212);
+        etiqueta2.setBounds(80, 80, 300, 300);
+        //etiqueta2.setIcon(new ImageIcon(imagen.getImage().getScaledInstance(300, 300, Image.SCALE_SMOOTH)));//ancho alto y un tipo de escalado
+        etiqueta2.setIcon(new ImageIcon(imagen.getImage().getScaledInstance(etiqueta2.getWidth(), etiqueta2.getHeight(), Image.SCALE_SMOOTH)));//ancho alto y un tipo de escalado
         panel.add(etiqueta2);
         
     }
