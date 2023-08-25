@@ -13,6 +13,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
@@ -40,7 +41,8 @@ public class Ventana extends JFrame{
         //colocarEtiquetas();
         //colocarBotones();
         // colocarRadioBotones();
-        colocarCajasdeTexto();
+        //colocarCajasdeTexto();
+        colocarAreasdeTexto();
     }
     
     private void colocarPaneles(){
@@ -139,7 +141,7 @@ public class Ventana extends JFrame{
     }
     
     private void colocarCajasdeTexto(){
-        JTextField cajaTexto = new JTextField();
+        JTextField cajaTexto = new JTextField();//creacion caja de texto
         //JTextField cajaTexto = new JTextField("Hola",20);//constructor para poner un mensaje en la caja y el tamañlo del jtextfield cuando el layout del panel esta activado
         cajaTexto.setBounds(50, 50, 200, 30);//x y ancho alto
         cajaTexto.setText("Hola..");//le ponemos un texto a la caja
@@ -147,5 +149,16 @@ public class Ventana extends JFrame{
         System.out.println("El texto en la caja es: "+cajaTexto.getText());//impirmimos un mensaje que nos idga que dice la caja y lo que dice la cja alo conseguimos con el metodo .getText();
         panel.add(cajaTexto);
         
+    }
+    
+    private void colocarAreasdeTexto(){
+        JTextArea areaTexto=new JTextArea();//creacion area de texto
+        areaTexto.setBounds(20, 20, 300, 200);//x y ancho alto
+        areaTexto.setText("Escriba el texto aqui..");//dar un texto predefinido
+        areaTexto.append("\nEscribe por aqui..");//añadir mas texto al area
+        areaTexto.setEditable(true);//establecer editado del area de texto
+        
+        System.out.println("El texto es "+areaTexto.getText());
+        panel.add(areaTexto);
     }
 }
