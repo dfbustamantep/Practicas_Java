@@ -4,6 +4,7 @@ package Ventana;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -36,13 +37,13 @@ public class Ventana extends JFrame{
         //JLabel etiqueta = new JLabel("Hola");//creamos una etiqueta
         JLabel etiqueta = new JLabel();
         //JLabel etiqueta = new JLabel("Hola",SwingConstants.CENTER);//Construvtor para el texto y ubicacion del texto en la etiqueta 
-        etiqueta.setText("Hola");//establecemos el texto en la etiqueta
-        etiqueta.setBounds(10,10 ,100 ,40 );//posicionamos la etiqueta pos x,y,alto y ancho
+        etiqueta.setText("Mundial 2018");//establecemos el texto en la etiqueta
+        etiqueta.setBounds(85,10 ,300 ,80 );//posicionamos la etiqueta pos x,y,alto y ancho
         etiqueta.setHorizontalAlignment(SwingConstants.CENTER);//estabelecemos la alineacion horizontal del texto
-        etiqueta.setForeground(Color.white);//establecemos el color de la letra
-        etiqueta.setOpaque(true);//establecemos pintar el fondo de la etiqueta
-        etiqueta.setBackground(Color.black);//cambiamos el color de fondo de la etiqueta
-        etiqueta.setFont(new Font("arial",3,30));//establecemos la fuente del texto primer parametro nombre de la fente,segundo el estilo de la fuente el cual se puede poner numerico o con el metodo Font.tipoTexto y el ultimo parametro tamaño
+        etiqueta.setForeground(Color.BLACK);//establecemos el color de la letra
+        //etiqueta.setOpaque(true);//establecemos pintar el fondo de la etiqueta
+        //etiqueta.setBackground(Color.black);//cambiamos el color de fondo de la etiqueta
+        etiqueta.setFont(new Font("Comic Sans MS",0,40));//establecemos la fuente del texto primer parametro nombre de la fente,segundo el estilo de la fuente el cual se puede poner numerico o con el metodo Font.tipoTexto y el ultimo parametro tamaño
         /*
         0 normal
         1 negrita
@@ -50,5 +51,13 @@ public class Ventana extends JFrame{
         3 negrita y cursiva
         */
         panel.add(etiqueta);//agregamos la etiqueta sobre el panel
+        
+        //Etiqueta 2 - etiqueta tipo imagen
+       
+        JLabel etiqueta2 = new JLabel(new ImageIcon("balonmundial.jpg"));
+        //etiqueta2.setIcon(new ImageIcon("balonmundial.jpg"));
+        etiqueta.setBounds(10, 80, 238, 212);
+        panel.add(etiqueta2);
+        
     }
 }
