@@ -13,6 +13,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
+import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
 public class Ventana extends JFrame{
@@ -38,7 +39,8 @@ public class Ventana extends JFrame{
         colocarPaneles();
         //colocarEtiquetas();
         //colocarBotones();
-        colocarRadioBotones();
+        // colocarRadioBotones();
+        colocarCajasdeTexto();
     }
     
     private void colocarPaneles(){
@@ -81,7 +83,7 @@ public class Ventana extends JFrame{
         
     }
     
-    public void colocarBotones(){
+    private void colocarBotones(){
         
         //boton 1 boton de texto
         //JButton boton1 = new JButton("Click"); //establecemos el texto en el constructor
@@ -101,10 +103,11 @@ public class Ventana extends JFrame{
         panel.add(boton1);//añadimos el boton al panel
         
         //boton 2 bton de imagewn
-        JButton boton2 = new JButton();
+        JButton boton2 = new JButton();//creamos un nuevo boton
+        //x y ancho alto
         boton2.setBounds(100,200,100,40);
         //boton2.setOpaque(true);//cuando no nos deja cambiar el color del boton podemos usar el metodo .setOpaque
-        ImageIcon imagen2 = new ImageIcon("boton.jpg");
+        ImageIcon imagen2 = new ImageIcon("boton.jpg");//creamos una imagen
         boton2.setIcon(new ImageIcon(imagen2.getImage().getScaledInstance(boton2.getWidth(),boton2.getHeight() ,Image.SCALE_SMOOTH )));
         boton2.setBackground(Color.blue);//establecemos color de fondo del boton
         
@@ -113,7 +116,7 @@ public class Ventana extends JFrame{
         
     }
     
-    public void colocarRadioBotones(){
+    private void colocarRadioBotones(){
         JRadioButton radioBoton1 = new JRadioButton("Opcion 1",true);//true aparece marcado cuando lo ejecutamos
         radioBoton1.setBounds(50, 100, 200, 50);
         radioBoton1.setEnabled(true);//para que este disponible 
@@ -133,5 +136,16 @@ public class Ventana extends JFrame{
         grupoRadioBotones.add(radioBoton1);
         grupoRadioBotones.add(radioBoton2);
         grupoRadioBotones.add(radioBoton3);
+    }
+    
+    private void colocarCajasdeTexto(){
+        JTextField cajaTexto = new JTextField();
+        //JTextField cajaTexto = new JTextField("Hola",20);//constructor para poner un mensaje en la caja y el tamañlo del jtextfield cuando el layout del panel esta activado
+        cajaTexto.setBounds(50, 50, 200, 30);//x y ancho alto
+        cajaTexto.setText("Hola..");//le ponemos un texto a la caja
+        
+        System.out.println("El texto en la caja es: "+cajaTexto.getText());//impirmimos un mensaje que nos idga que dice la caja y lo que dice la cja alo conseguimos con el metodo .getText();
+        panel.add(cajaTexto);
+        
     }
 }
