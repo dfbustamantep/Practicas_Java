@@ -3,6 +3,7 @@ package Ventana;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -33,13 +34,21 @@ public class Ventana extends JFrame{
         this.getContentPane().add(panel);//agregamosd el panel a la ventana
         
         //JLabel etiqueta = new JLabel("Hola");//creamos una etiqueta
-        //JLabel etiqueta = new JLabel();
-        JLabel etiqueta = new JLabel("Hola",SwingConstants.CENTER);
-        //etiqueta.setText("Hola");//establecemos el texto en la etiqueta
-        etiqueta.setBounds(10,10 ,50 ,20 );//posicionamos la etiqueta
+        JLabel etiqueta = new JLabel();
+        //JLabel etiqueta = new JLabel("Hola",SwingConstants.CENTER);//Construvtor para el texto y ubicacion del texto en la etiqueta 
+        etiqueta.setText("Hola");//establecemos el texto en la etiqueta
+        etiqueta.setBounds(10,10 ,100 ,40 );//posicionamos la etiqueta pos x,y,alto y ancho
+        etiqueta.setHorizontalAlignment(SwingConstants.CENTER);//estabelecemos la alineacion horizontal del texto
         etiqueta.setForeground(Color.white);//establecemos el color de la letra
         etiqueta.setOpaque(true);//establecemos pintar el fondo de la etiqueta
         etiqueta.setBackground(Color.black);//cambiamos el color de fondo de la etiqueta
+        etiqueta.setFont(new Font("arial",3,30));//establecemos la fuente del texto primer parametro nombre de la fente,segundo el estilo de la fuente el cual se puede poner numerico o con el metodo Font.tipoTexto y el ultimo parametro tamaño
+        /*
+        0 normal
+        1 negrita
+        2 cursiva
+        3 negrita y cursiva
+        */
         panel.add(etiqueta);//agregamos la etiqueta sobre el panel
     }
 }
