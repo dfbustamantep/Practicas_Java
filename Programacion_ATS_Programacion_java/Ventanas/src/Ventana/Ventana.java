@@ -7,12 +7,14 @@ import java.awt.Font;
 import java.awt.Image;
 import java.awt.MediaTracker;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
 public class Ventana extends JFrame{
+    JPanel panel ;
     public Ventana(){
         //ancho,largo
         this.setSize(500,500);//establecemos el tamaño de la ventana
@@ -31,10 +33,19 @@ public class Ventana extends JFrame{
     }
     
     private void iniciarComponentes(){
-        JPanel panel = new JPanel();//Creacion del panel
+        colocarPaneles();
+        //colocarEtiquetas();
+        colocarBotones();
+    }
+    
+    private void colocarPaneles(){
+        panel = new JPanel();//Creacion del panel
         //panel.setBackground(Color.green);//establecemos el color del panel
         panel.setLayout(null);//estamos desactivando el diseño para qusar el metodo setBounds en etiqueta
         this.getContentPane().add(panel);//agregamosd el panel a la ventana
+    }
+    
+    private void colocarEtiquetas(){
         
         //JLabel etiqueta = new JLabel("Hola");//creamos una etiqueta
         JLabel etiqueta = new JLabel();
@@ -64,6 +75,17 @@ public class Ventana extends JFrame{
         //etiqueta2.setIcon(new ImageIcon(imagen.getImage().getScaledInstance(300, 300, Image.SCALE_SMOOTH)));//ancho alto y un tipo de escalado
         etiqueta2.setIcon(new ImageIcon(imagen.getImage().getScaledInstance(etiqueta2.getWidth(), etiqueta2.getHeight(), Image.SCALE_SMOOTH)));//ancho alto y un tipo de escalado
         panel.add(etiqueta2);
+        
+    }
+    
+    public void colocarBotones(){
+        //JButton boton1 = new JButton("Click"); //establecemos el texto en el constructor
+        JButton boton1 = new JButton();
+        boton1.setText("Click");//establecemos el texto
+        boton1.setBounds(100, 100, 100, 40);//x y ancho alto
+        boton1.setEnabled(true);//activar o descativar las funciones del boton 
+        boton1.setMnemonic('a');//estabelecemos alt +letra que pongamos para poder usar el boton
+        panel.add(boton1);//añadimos el boton al panel
         
     }
 }
