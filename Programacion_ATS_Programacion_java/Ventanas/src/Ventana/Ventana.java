@@ -9,6 +9,7 @@ import java.awt.MediaTracker;
 import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -42,7 +43,8 @@ public class Ventana extends JFrame{
         //colocarBotones();
         // colocarRadioBotones();
         //colocarCajasdeTexto();
-        colocarAreasdeTexto();
+        //colocarAreasdeTexto();
+        colocarListasDesplegables();
     }
     
     private void colocarPaneles(){
@@ -160,5 +162,16 @@ public class Ventana extends JFrame{
         
         System.out.println("El texto es "+areaTexto.getText());
         panel.add(areaTexto);
+    }
+    
+    private void colocarListasDesplegables(){
+        String [] paises = {"Colombia","Peru","Paraguay","Ecuador"};
+        
+        JComboBox listaDesplegable1 = new JComboBox(paises);//añadimos la lista de paises a nuestra lsita desplegable
+        listaDesplegable1.setBounds(20, 20, 100, 30);// x y ancho alto
+        
+        listaDesplegable1.addItem("Argentina");//agregar otro elemento a JComboBox
+        listaDesplegable1.setSelectedItem("");//seleccionar el primer objeto visto
+        panel.add(listaDesplegable1);
     }
 }
