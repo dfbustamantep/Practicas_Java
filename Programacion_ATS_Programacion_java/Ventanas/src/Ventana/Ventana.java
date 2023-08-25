@@ -6,6 +6,7 @@ import java.awt.Dimension;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 
 public class Ventana extends JFrame{
     public Ventana(){
@@ -32,9 +33,10 @@ public class Ventana extends JFrame{
         this.getContentPane().add(panel);//agregamosd el panel a la ventana
         
         //JLabel etiqueta = new JLabel("Hola");//creamos una etiqueta
-        JLabel etiqueta = new JLabel();
-        etiqueta.setText("Hola");//establecemos el texto en la etiqueta
-        etiqueta.setBounds(10,10 ,30 ,20 );//posicionamos la etiqueta
+        //JLabel etiqueta = new JLabel();
+        JLabel etiqueta = new JLabel("Hola",SwingConstants.CENTER);
+        //etiqueta.setText("Hola");//establecemos el texto en la etiqueta
+        etiqueta.setBounds(10,10 ,50 ,20 );//posicionamos la etiqueta
         etiqueta.setForeground(Color.white);//establecemos el color de la letra
         etiqueta.setOpaque(true);//establecemos pintar el fondo de la etiqueta
         etiqueta.setBackground(Color.black);//cambiamos el color de fondo de la etiqueta
