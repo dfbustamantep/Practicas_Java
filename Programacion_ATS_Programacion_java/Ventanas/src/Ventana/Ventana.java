@@ -6,11 +6,13 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Image;
 import java.awt.MediaTracker;
+import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 import javax.swing.SwingConstants;
 
 public class Ventana extends JFrame{
@@ -35,7 +37,8 @@ public class Ventana extends JFrame{
     private void iniciarComponentes(){
         colocarPaneles();
         //colocarEtiquetas();
-        colocarBotones();
+        //colocarBotones();
+        colocarRadioBotones();
     }
     
     private void colocarPaneles(){
@@ -79,6 +82,8 @@ public class Ventana extends JFrame{
     }
     
     public void colocarBotones(){
+        
+        //boton 1 boton de texto
         //JButton boton1 = new JButton("Click"); //establecemos el texto en el constructor
         JButton boton1 = new JButton();
         boton1.setText("Click");//establecemos el texto
@@ -95,6 +100,38 @@ public class Ventana extends JFrame{
         */
         panel.add(boton1);//añadimos el boton al panel
         
+        //boton 2 bton de imagewn
+        JButton boton2 = new JButton();
+        boton2.setBounds(100,200,100,40);
+        //boton2.setOpaque(true);//cuando no nos deja cambiar el color del boton podemos usar el metodo .setOpaque
+        ImageIcon imagen2 = new ImageIcon("boton.jpg");
+        boton2.setIcon(new ImageIcon(imagen2.getImage().getScaledInstance(boton2.getWidth(),boton2.getHeight() ,Image.SCALE_SMOOTH )));
+        boton2.setBackground(Color.blue);//establecemos color de fondo del boton
         
+        panel.add(boton2);
+        
+        
+    }
+    
+    public void colocarRadioBotones(){
+        JRadioButton radioBoton1 = new JRadioButton("Opcion 1",true);//true aparece marcado cuando lo ejecutamos
+        radioBoton1.setBounds(50, 100, 200, 50);
+        radioBoton1.setEnabled(true);//para que este disponible 
+        radioBoton1.setText("Programacion");//cambiar texto
+        radioBoton1.setFont(new Font("Comic Sans MS",0,20));
+        panel.add(radioBoton1);
+        
+        JRadioButton radioBoton2 = new JRadioButton("Opcion 2",false);
+        radioBoton2.setBounds(50, 150, 100, 50);
+        panel.add(radioBoton2);
+        
+        JRadioButton radioBoton3 = new JRadioButton("Opcion 3",false);
+        radioBoton3.setBounds(50, 200, 100, 50);
+        panel.add(radioBoton3);
+        
+        ButtonGroup grupoRadioBotones = new ButtonGroup();
+        grupoRadioBotones.add(radioBoton1);
+        grupoRadioBotones.add(radioBoton2);
+        grupoRadioBotones.add(radioBoton3);
     }
 }
