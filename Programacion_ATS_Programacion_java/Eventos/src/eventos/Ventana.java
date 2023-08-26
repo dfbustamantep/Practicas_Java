@@ -7,6 +7,8 @@ package eventos;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.JButton;
@@ -41,7 +43,7 @@ public class Ventana extends JFrame{
         colocarEtiqueta();
         colocarAreaDeTexto();
         colocarBoton();
-        
+        colocarCajaDeTexto();
     }
     
     private void colocarPanel(){
@@ -57,13 +59,20 @@ public class Ventana extends JFrame{
         panel.add(etiqueta);*/
     }
     
+    private void colocarCajaDeTexto(){
+        cajaTexto = new JTextField();
+        cajaTexto.setBounds(20,30,150,30);
+        panel.add(cajaTexto);
+        
+        eventosDelTeclado();
+    }
     private void colocarAreaDeTexto(){
         /*cajaTexto = new JTextField();
         cajaTexto.setBounds(30,50,300,30);
         panel.add(cajaTexto);*/
         
         areaTexto = new JTextArea();
-        areaTexto.setBounds(20,20,200,300);
+        areaTexto.setBounds(230,30,200,300);
         panel.add(areaTexto);
     }
     
@@ -79,7 +88,7 @@ public class Ventana extends JFrame{
         panel.add(saludo);
         
         //eventoOyenteDeAccion();
-        eventoOyenteDeRaton();
+        //eventoOyenteDeRaton();
                 
     }
     
@@ -129,5 +138,39 @@ public class Ventana extends JFrame{
             }
         };
         boton.addMouseListener(oyenteDeRaton);
+    }
+    
+    private void eventosDelTeclado(){
+        KeyListener oyenteDeTeclado;
+        oyenteDeTeclado = new KeyListener() {
+
+            @Override
+            public void keyTyped(KeyEvent e) {//presionar un caracter unicode
+                //areaTexto.append("KeyTyped\n");
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {//presionar cualquier teclada del teclado
+               // areaTexto.append("keyPressed\n");
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {//presionar y soltar cualquier telca
+                //areaTexto.append("KeyReleased\n");
+                
+                
+                //para saber que tecla esta presionando
+                if(e.getKeyChar()=='p'){
+                    areaTexto.append("Tecla p presionada\n");
+                }
+                if(e.getKeyChar()=='\n'){
+                    areaTexto.append("Tecla ENTER presionada\n");
+                }
+                if(e.getKeyChar()==' '){
+                    areaTexto.append("Tecla SPACE presionada\n");
+                }
+            }
+        };
+        cajaTexto.addKeyListener(oyenteDeTeclado);
     }
 }
