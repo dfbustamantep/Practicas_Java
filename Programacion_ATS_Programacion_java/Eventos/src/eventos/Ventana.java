@@ -160,6 +160,7 @@ public class Ventana extends JFrame{
                 
                 
                 //para saber que tecla esta presionando
+                
                 if(e.getKeyChar()=='p'){
                     areaTexto.append("Tecla p presionada\n");
                 }
@@ -169,6 +170,15 @@ public class Ventana extends JFrame{
                 if(e.getKeyChar()==' '){
                     areaTexto.append("Tecla SPACE presionada\n");
                 }
+                /*
+                Determina cuando no esta oprimeindo una tecla
+                
+                if(e.getKeyChar()!=' '){
+                    System.out.println("No ha presionado SPACE intente de nuevo");
+                }
+                else{
+                    System.out.println("Ha presionado SPACE");
+                }*/
             }
         };
         cajaTexto.addKeyListener(oyenteDeTeclado);
